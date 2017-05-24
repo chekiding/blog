@@ -14,6 +14,8 @@ class UsersTable extends Table{
     $this->setTable('users');
     $this->setPrimaryKey('id');
     $this->setDisplayField('name');
+    //auto masuk datetime field created and modified
+    $this->addBehavior('Timestamp');
   }
 
 }

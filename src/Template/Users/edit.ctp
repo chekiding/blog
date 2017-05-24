@@ -1,6 +1,6 @@
-<h1>Add New User</h1>
+<h1>Edit User</h1>
 
-<?php echo $this->Form->create() ?>
+<?php echo $this->Form->create($user) ?>
 
   <?php echo $this->Form->control('name') ?>
   <?php echo $this->Form->control('username') ?>
