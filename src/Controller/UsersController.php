@@ -38,10 +38,28 @@ class UsersController extends AppController{
 
   public function edit($id=null){
     $user = $this->Users->get($id);
+
+    if ($this->request->is(['post','put','patch'])){
+      $user = $this->Users->patchEntity($user,$this->request->data());
+
+      if ($this->Users->save($user)){
+        $this->Flash->success('Edited!!');
+
+        return $this->redirect(['action'=>'index']);
+      }
+    }
     $this->set('user',$user);
     //pr ($user);
+  }
 
+  public function delete($id=null){
+    $user = $this->Users->get($id);
 
+    if ($this->Users->delete($user)){
+      $this->Flash->success('Deleted!!');
+
+      return $this->redirect(['action'=>'index']);
+    }
   }
 
 }

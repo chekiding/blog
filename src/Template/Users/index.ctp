@@ -20,7 +20,7 @@
   <td>
     <?php echo $this->Html->link('View',['action'=>'view',$user->id]) ?>
     <?php echo $this->Html->link('Edit',['action'=>'edit',$user->id]) ?>
-    <?php echo $this->Html->link('Delete',['action'=>'delete',$user->id]) ?>
+    <?php echo $this->Html->link('Delete',['action'=>'delete',$user->id],['confirm'=>'Sure?']) ?>
   </td>
 </tr>
 <?php $no++ ?>
