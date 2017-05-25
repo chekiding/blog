@@ -34,6 +34,7 @@ class UsersController extends AppController{
         return $this->redirect(['action'=>'index']);
       }
     }
+    $this->set('user',$user);
   }
 
   public function edit($id=null){

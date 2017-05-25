@@ -16,6 +16,8 @@ class PostsTable extends Table{
     $this->setDisplayField('title');
     //auto masuk datetime field created and modified
     $this->addBehavior('Timestamp');
+
+    $this->belongsTo('Users',['foreignKey'=>'user_id']);
   }
 
 }

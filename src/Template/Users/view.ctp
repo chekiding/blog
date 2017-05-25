@@ -11,6 +11,6 @@
   </tr>
   <tr>
     <td>Status</td>
-    <td><?php echo $post->status?></td>
+    <td><?php echo $post->user->name?></td>
   </tr>
 </table>

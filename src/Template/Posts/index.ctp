@@ -5,7 +5,7 @@
     <th>No</th>
     <th>Title</th>
     <th>Body</th>
-    <th>Status</th>
+    <th>User</th>
     <th>Action</th>
   </tr>
 
@@ -16,7 +16,7 @@
   <td><?php echo $no?></td>
   <td><?php echo $post->title?></td>
   <td><?php echo $post->body?></td>
-  <td><?php echo $post->status?></td>
+  <td><?php echo $post->user->name?></td>
   <td>
     <?php echo $this->Html->link('View',['action'=>'view',$post->id]) ?>
     <?php echo $this->Html->link('Edit',['action'=>'edit',$post->id]) ?>

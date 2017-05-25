@@ -16,7 +16,37 @@ class UsersTable extends Table{
     $this->setDisplayField('name');
     //auto masuk datetime field created and modified
     $this->addBehavior('Timestamp');
+    //relationship 1 User Many Post
+    $this->hasMany('Posts',['foreignKey'=>'user_id']);
   }
 
+  public function validationDefault(Validator $validator){
+    $validator
+            ->integer('id')
+            ->allowEmpty('id', 'create');
+
+        $validator
+            ->requirePresence('name', 'create')
+            ->notEmpty('name');
+
+        $validator
+            ->requirePresence('username', 'create')
+            ->notEmpty('username');
+
+        $validator
+            ->requirePresence('password', 'create')
+            ->notEmpty('password');
+
+        $validator
+            ->email('email')
+            ->allowEmpty('email');
+
+        $validator
+            ->requirePresence('status', 'create')
+            ->notEmpty('status');
+
+        return $validator;
+
+  }
 }
 ?>
